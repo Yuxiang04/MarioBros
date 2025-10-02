@@ -1,19 +1,63 @@
 package tp1.logic;
 
+import tp1.logic.GameObjectContainer;
+import tp1.logic.gameobjects.Land;
+import tp1.logic.gameobjects.Mario;
+import tp1.logic.gameobjects.ExitDoor;
+import tp1.logic.gameobjects.Goomba;
+
 public class Game {
 
 	public static final int DIM_X = 30;
 	public static final int DIM_Y = 15;
+	private int remainingTime;
+	private Mario mario;
+	private int nLevel;
+	private GameObjectContainer gameObjects;
 
 	//TODO fill your code
 	
 	public Game(int nLevel) {
-		// TODO Auto-generated constructor stub
+		 this.nLevel = nLevel;
+	     initLevel0();
 	}
 	
 	public String positionToString(int col, int row) {
-		// TODO Auto-generated method stub
-		return " ";
+		Mario mario = gameObjects.getMario();
+	    if (mario != null) {
+	        Position pos = mario.getPos();
+	        if (pos.getCol() == col && pos.getRow() == row) {
+	            return mario.getIcon();
+	        }
+	    }
+
+	    // ExitDoor
+	    ExitDoor exit = gameObjects.getExit();
+	    if (exit != null) {
+	        Position pos = exit.getPos();
+	        if (pos.getCol() == col && pos.getRow() == row) {
+	            return exit.getIcon();
+	        }
+	    }
+
+	    // Goombas
+	    for (Goomba g : gameObjects.getGoombas()) {
+	        Position pos = g.getPos();
+	        if (pos.getCol() == col && pos.getRow() == row) {
+	            return g.getIcon();
+	        }
+	    }
+
+	    // Land
+	    for (Land l : gameObjects.getLands()) {
+	        Position pos = l.getPos();
+	        if (pos.getCol() == col && pos.getRow() == row) {
+	            return l.getIcon();
+	        }
+	    }
+
+	    // Si no hay ningún objeto en esta celda
+	    return " ";
 	}
 
 	public boolean playerWins() {
@@ -52,13 +96,12 @@ public class Game {
 		return false;
 	}
 	
-	/*
 	private void initLevel0() {
 		this.nLevel = 0;
 		this.remainingTime = 100;
 		
 		// 1. Mapa
-		gameObjects = new GameObjectContainer();
+		this.gameObjects = new GameObjectContainer();
 		for(int col = 0; col < 15; col++) {
 			gameObjects.add(new Land(new Position(13,col)));
 			gameObjects.add(new Land(new Position(14,col)));		
@@ -95,5 +138,5 @@ public class Game {
 
 		gameObjects.add(new Goomba(this, new Position(0, 19)));
 	}
-	*/
+
 }

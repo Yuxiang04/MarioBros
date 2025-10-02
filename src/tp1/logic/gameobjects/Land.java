@@ -7,8 +7,22 @@ public class Land {
 
 	private Position pos;
 	
+	public Land(Position pos) {
+		this.pos = pos;
+	}
+	
+	public Land(int col, int row) {
+        this.pos = new Position(col, row);
+    }
+
 	public String getIcon() {
 		return Messages.LAND;
 		
 	}
+	
+	public Position getPos() {
+		return this.pos;
+	}
+	
+	
 }

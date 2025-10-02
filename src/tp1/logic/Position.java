@@ -10,6 +10,16 @@ public class Position {
 	private int col;
 	private int row;
 
+	public Position(int row, int col) {
+		this.col = col;
+		this.row = row;
+	}
 	//TODO fill your code
-
+	public int getCol() {
+		return this.col;
+	}
+	
+	public int getRow() {
+		return this.row;
+	}
 }
