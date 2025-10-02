@@ -10,4 +10,24 @@ public abstract class GameView implements ViewInterface{
 		this.game = game;
 	}
 	
+	public void showWelcome() {
+		
+	}
+	public void showGame() {
+		
+	}
+	public void showEndMessage() {
+		
+	}
+	public void showError(String message) {
+		
+	}
+	public void showMessage(String message) {
+		
+	}
+	
+	public String[] getPrompt() {
+		return null;
+	}
+	
 }

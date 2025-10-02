@@ -12,4 +12,13 @@ public class Mario {
 	public void update() {
 		//TODO fill your code
 	}
+	
+	public String getIcon() {
+		return null;
+		
+	}
+	public String toString() {
+		return null;
+		
+	}
 }

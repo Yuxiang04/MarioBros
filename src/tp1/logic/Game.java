@@ -46,6 +46,11 @@ public class Game {
 		// TODO returns a textual representation of the object
 		return "TODO: Hola soy el game";
 	}
+
+	public boolean isFinished() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 	/*
 	private void initLevel0() {

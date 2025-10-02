@@ -24,8 +24,12 @@ public class Controller {
 	public void run() {
 		view.showWelcome();
 		
-		//TODO fill your code: The main loop that displays the game, asks the user for input, and executes the action.
+		
 		view.showGame();
+		while (!game.isFinished()) {
+			// Pedir una línea al usuario
+			// Ejecutar el comando del usuario (método)
+			}
 		
 		view.showEndMessage();
 	}
