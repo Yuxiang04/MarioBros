@@ -14,8 +14,14 @@ public class Game {
 	private Mario mario;
 	private int nLevel;
 	private GameObjectContainer gameObjects;
+	private boolean isFinished = false;
 
 	//TODO fill your code
+	
+	public int getLevel() {
+	    return nLevel;
+	}
+
 	
 	public Game(int nLevel) {
 		 this.nLevel = nLevel;
@@ -90,10 +96,14 @@ public class Game {
 		// TODO returns a textual representation of the object
 		return "TODO: Hola soy el game";
 	}
-
+	
+	public void setFinished(boolean finished) {
+		isFinished = finished;
+	}
+	
 	public boolean isFinished() {
 		// TODO Auto-generated method stub
-		return false;
+		return isFinished;
 	}
 	
 	private void initLevel0() {

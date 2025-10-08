@@ -1,5 +1,6 @@
 package tp1.logic.gameobjects;
 
+import tp1.logic.Action;
 import tp1.logic.Game;
 import tp1.logic.Position;
 import tp1.view.Messages;
@@ -39,4 +40,11 @@ public class Mario {
 	public Position getPos() {
 		return this.pos;
 	}
+	
+	
+	/*Intento movimiento
+	public void move(Action action) {
+		this.pos.setCol(action.getX());
+		this.pos.setRow(action.getY());
+	}*/
 }

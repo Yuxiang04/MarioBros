@@ -19,7 +19,15 @@ public class Position {
 		return this.col;
 	}
 	
+	public void setCol(int x) {
+		this.col += x;
+	}
+	
 	public int getRow() {
 		return this.row;
+	}
+	
+	public void setRow(int y) {
+		this.row += y;
 	}
 }
