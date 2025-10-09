@@ -14,20 +14,15 @@ public class Position {
 		this.col = col;
 		this.row = row;
 	}
+	
+	public boolean equals(Position posi) {
+		if(this.row == posi.row) {
+			return (this.col == posi.col);
+		}
+		else {
+			return false;
+		}
+	}
+	//Implementar metodo equals + hashcode para no usar el equals heredado de Object
 	//TODO fill your code
-	public int getCol() {
-		return this.col;
-	}
-	
-	public void setCol(int x) {
-		this.col += x;
-	}
-	
-	public int getRow() {
-		return this.row;
-	}
-	
-	public void setRow(int y) {
-		this.row += y;
-	}
 }

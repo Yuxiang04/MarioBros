@@ -28,42 +28,9 @@ public class Game {
 	     initLevel0();
 	}
 	
-	public String positionToString(int col, int row) {
-		Mario mario = gameObjects.getMario();
-	    if (mario != null) {
-	        Position pos = mario.getPos();
-	        if (pos.getCol() == col && pos.getRow() == row) {
-	            return mario.getIcon();
-	        }
-	    }
-
-	    // ExitDoor
-	    ExitDoor exit = gameObjects.getExit();
-	    if (exit != null) {
-	        Position pos = exit.getPos();
-	        if (pos.getCol() == col && pos.getRow() == row) {
-	            return exit.getIcon();
-	        }
-	    }
-
-	    // Goombas
-	    for (Goomba g : gameObjects.getGoombas()) {
-	        Position pos = g.getPos();
-	        if (pos.getCol() == col && pos.getRow() == row) {
-	            return g.getIcon();
-	        }
-	    }
-
-	    // Land
-	    for (Land l : gameObjects.getLands()) {
-	        Position pos = l.getPos();
-	        if (pos.getCol() == col && pos.getRow() == row) {
-	            return l.getIcon();
-	        }
-	    }
-
-	    // Si no hay ningún objeto en esta celda
-	    return " ";
+	public String posToString(int col, int row) {
+	Position posi = new Position(row, col);
+	return gameObjects.positionToString(posi);
 	}
 
 	public boolean playerWins() {

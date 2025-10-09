@@ -40,24 +40,34 @@ public class GameObjectContainer {
 	public void add(Mario mario) {
 		this.mario = mario;
 	}
+	
+	//bucle to string
+	public String positionToString(Position posi) {
+		
+		// Mario
+	    if (mario != null && mario.isInPosition(posi)) {
+	            return mario.getIcon();
+	    }
 
-	public Mario getMario() {
-		// TODO Auto-generated method stub
-		return this.mario;
-	}
+	    // ExitDoor
+	    if (exit != null && exit.isInPosition(posi)) {
+	            return exit.getIcon();
+	    }
 
-	public ExitDoor getExit() {
-		// TODO Auto-generated method stub
-		return this.exit;
-	}
+	    // Goombas
+	    for (Goomba g : goombaList) {
+	    	if(g.isInPosition(posi)) {
+	            return g.getIcon();
+	        }
+	    }
+	    // Land
+	    for (Land l : landList) {
+	    	if(l.isInPosition(posi)) {
+	            return l.getIcon();
+	        }
+	    }
 
-	public List<Goomba> getGoombas() {
-		// TODO Auto-generated method stub
-		return this.goombaList;
-	}
-
-	public List<Land> getLands() {
-		// TODO Auto-generated method stub
-		return this.landList;
+	    // Si no hay ningún objeto en esta celda
+	    return " ";
 	}
 }

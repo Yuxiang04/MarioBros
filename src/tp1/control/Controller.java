@@ -42,7 +42,7 @@ public class Controller {
 		switch (command) {
 		case "a[r]", "action[r]", "a[right]", "action[right]":
 			System.out.println("You chose: action right");
-			
+
 			break;
 
 		case "a[l]", "action[l]", "a[left]", "action[left]":

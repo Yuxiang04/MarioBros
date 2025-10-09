@@ -37,14 +37,7 @@ public class Mario {
 		
 	}
 	
-	public Position getPos() {
-		return this.pos;
+	public boolean isInPosition(Position posi) {
+		return this.pos.equals(posi);
 	}
-	
-	
-	/*Intento movimiento
-	public void move(Action action) {
-		this.pos.setCol(action.getX());
-		this.pos.setRow(action.getY());
-	}*/
 }
